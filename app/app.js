@@ -118,7 +118,10 @@ function validateMonth(value) {
 
         if(value.length === 0 || Number(value) > 12) {
             inputMM.classList.add("error");
-            errorMsg[2].classList.remove("hide");  
+            errorMsg[2].classList.remove("hide");
+            mmField = "";
+            console.log(mmField);
+            return;
         } 
         if(value.match(numberPattern) && Number(value) <= 12) {
             inputMM.classList.remove("error");
@@ -129,14 +132,13 @@ function validateMonth(value) {
                 value = "0" + value;
                 mmCard.textContent = value;  
                 mmField = value;
+                console.log(mmField);
             } else {
                 value = value;
                 mmCard.textContent = value;  
                 mmField = value;
+                console.log(mmField);
             }
-        } else {
-            value = value;
-            mmField = value
         }
 }
 
@@ -165,7 +167,7 @@ submitBtn.addEventListener("click", (e) => {
     //console.log(yyField);
     //console.log(cvcNumber);
 
-    if(cardOwner !== [] && cardOwner.length > 4 && cvcNumber !== [] && cvcNumber.length === 3 && mmField !== [] && yyField !== [] && yyField.length === 2 && cardNumber !== [] && cardNumber.length === 16) {
+    if(cardOwner !== "" && cardOwner.length > 4 && cvcNumber !== "" && cvcNumber.length === 3 && mmField !== "" && yyField !== "" && yyField.length === 2 && cardNumber !== "" && cardNumber.length === 16) {
         successMsg.classList.remove("hide");
         formContainer.classList.add("hide");
         form.reset();

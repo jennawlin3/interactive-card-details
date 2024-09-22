@@ -67,7 +67,8 @@ inputCVC.addEventListener("input", (e) => {
         inputCVC.classList.add("error");
         errorMsg[3].classList.remove("hide");
         cvcCard.textContent = value;
-    } else {
+        
+    } if(value.match(numberPattern)) {
         inputCVC.classList.remove("error");
         errorMsg[3].classList.add("hide");  
         cvcNumber = value;
@@ -100,7 +101,9 @@ function handleInputCard(value) {
     if(value.length === 0) {
         inputCardNumber.classList.add("error");
         errorMsg[1].classList.remove("hide");
-    } else {
+        numberCard.textContent = value;
+    } 
+    if(value.match(numberPattern)) {
         inputCardNumber.classList.remove("error");
         errorMsg[1].classList.add("hide");
 
@@ -116,7 +119,8 @@ function validateMonth(value) {
         if(value.length === 0 || Number(value) > 12) {
             inputMM.classList.add("error");
             errorMsg[2].classList.remove("hide");  
-        } else {
+        } 
+        if(value.match(numberPattern)) {
             inputMM.classList.remove("error");
             errorMsg[2].classList.add("hide");  
             mmField = value;
@@ -138,7 +142,8 @@ function validateYear(value) {
         if(value.length === 0 || Number(value) < 24 || Number(value) > 28) {
             inputYY.classList.add("error");
             errorMsg[2].classList.remove("hide");  
-        } else {
+        } 
+        if(value.match(numberPattern)) {
             inputYY.classList.remove("error");
             errorMsg[2].classList.add("hide");  
             yyField = value;

@@ -42,12 +42,14 @@ inputCardHolder.addEventListener("keydown", (e) => {
         if(inputCardHolder.classList.contains("error")) {
         inputCardHolder.classList.remove("error");
         errorMsg[0].classList.add("hide");
+        } else {
+        handleInputOwner(e.key, cardOwner, holderCard);
+        inputCardHolder.value = cardOwner.join("");
+        return cardOwner;    
         }        
     }
 
-    handleInputOwner(e.key, cardOwner, holderCard);
-    inputCardHolder.value = cardOwner.join("");
-    return cardOwner;
+
 });
 
 inputCardNumber.addEventListener("keydown", (e) => {

@@ -88,6 +88,9 @@ body {
     font-size: 0.8rem;
     color: var(--white);
     letter-spacing: 1px;
+    display: flex;
+    width: 100%;
+    word-break: break-word;
 }
 
 .card-exp {

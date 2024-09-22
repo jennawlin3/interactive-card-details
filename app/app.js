@@ -33,7 +33,7 @@ let yyField =  [];
 let cvcNumber = [];
 
 
-inputCardHolder.addEventListener("keydown", (e) => {
+inputCardHolder.addEventListener("keypress", (e) => {
     /*if(e.key === 'tab') {
         return;
     }*/
@@ -45,7 +45,7 @@ inputCardHolder.addEventListener("keydown", (e) => {
         } else {
         handleInputOwner(e.key, cardOwner, holderCard);
         inputCardHolder.value = cardOwner.join("");
-        return cardOwner;    
+        //return cardOwner;  
         }        
     }
 

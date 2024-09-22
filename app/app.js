@@ -18,7 +18,7 @@ const formContainer = d.querySelector("#form-container");
 const errorMsg = d.querySelectorAll(".error-msg");
 const input = d.querySelectorAll("input");
 
-const numberPattern = /d/;
+const numberPattern = /[0-9]/;
 const namePattern = /^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)(\s+([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+))*$/g;
 
 let cardOwner;
@@ -155,14 +155,6 @@ submitBtn.addEventListener("click", (e) => {
     console.log(mmField);
     console.log(yyField);
     console.log(cvcNumber);
-
-    /*
-    let cardOwner = [];
-let cardNumber = [];
-let mmField =  [];
-let yyField =  [];
-let cvcNumber = [];
-    */
 
     if(cardOwner !== [] && cardOwner.length > 4 && cvcNumber !== [] && cvcNumber.length === 3 && mmField !== [] && yyField !== [] && yyField.length === 2 && cardNumber !== [] && cardNumber.length === 16) {
         successMsg.classList.remove("hide");

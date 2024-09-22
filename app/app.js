@@ -45,7 +45,6 @@ inputCardHolder.addEventListener("keydown", (e) => {
         }        
     }
 
-    e.preventDefault();
     handleInputOwner(e.key, cardOwner, holderCard);
     inputCardHolder.value = cardOwner.join("");
     return cardOwner;

@@ -109,7 +109,7 @@ function handleInputCard(value) {
 
         numberCard.textContent = card.join(" ");
         cardNumber = value;
-        console.log(cardNumber);
+        //console.log(cardNumber);
     } 
 }
 
@@ -134,7 +134,10 @@ function validateMonth(value) {
                 mmCard.textContent = value;  
                 mmField = value;
             }
-    }
+        } else {
+            value = value;
+            mmField = value
+        }
 }
 
 function validateYear(value) {
@@ -156,11 +159,11 @@ function validateYear(value) {
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    console.log(cardOwner);
-    console.log(cardNumber.length);
-    console.log(mmField);
-    console.log(yyField);
-    console.log(cvcNumber);
+    //console.log(cardOwner);
+    //console.log(cardNumber.length);
+    //console.log(mmField);
+    //console.log(yyField);
+    //console.log(cvcNumber);
 
     if(cardOwner !== [] && cardOwner.length > 4 && cvcNumber !== [] && cvcNumber.length === 3 && mmField !== [] && yyField !== [] && yyField.length === 2 && cardNumber !== [] && cardNumber.length === 16) {
         successMsg.classList.remove("hide");

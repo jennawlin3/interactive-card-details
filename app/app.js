@@ -31,6 +31,7 @@ let cardNumber = [];
 let mmField =  [];
 let yyField =  [];
 let cvcNumber = [];
+let inputName;
 
 
 inputCardHolder.addEventListener("keypress", (e) => {
@@ -44,12 +45,10 @@ inputCardHolder.addEventListener("keypress", (e) => {
         errorMsg[0].classList.add("hide");
         } else {
         handleInputOwner(e.key, cardOwner, holderCard);
-        inputCardHolder.value = cardOwner.join("");
+        inputName = "Card Holder";
         //return cardOwner;  
         }        
     }
-
-
 });
 
 inputCardNumber.addEventListener("keydown", (e) => {
@@ -133,19 +132,20 @@ function handleInputOwner(key, arr, output) {
 
     if(key === 'Backspace' && arr.length > 0) {
         arr.pop();
-        output.innerHTML = arr.join("");
-        console.log(arr);
+        output.textContent = arr.join("");
         return arr;
     }
 
     if(allowedLetter.includes(key)) {
         arr.push(key);
-        output.innerHTML = arr.join("");
+        output.textContent = arr.join("");
     } else {
         return;
     }
 
-    console.log(arr);
+    /*if(inputName === "Card Holder") {
+        inputCardHolder.value = arr.join("");
+    }*/
     return arr;
 }
 

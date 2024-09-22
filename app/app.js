@@ -34,9 +34,9 @@ let cvcNumber = [];
 
 
 inputCardHolder.addEventListener("keydown", (e) => {
-    if(e.key === 'tab') {
+    /*if(e.key === 'tab') {
         return;
-    }
+    }*/
 
     if(e) {
         if(inputCardHolder.classList.contains("error")) {

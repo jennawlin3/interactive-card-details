@@ -38,13 +38,14 @@ inputCardHolder.addEventListener("keypress", (e) => {
     /*if(e.key === 'tab') {
         return;
     }*/
+    let cardHolderValue = e.value;
 
     if(e) {
         if(inputCardHolder.classList.contains("error")) {
         inputCardHolder.classList.remove("error");
         errorMsg[0].classList.add("hide");
         } else {
-        handleInputOwner(e.key, cardOwner, holderCard);
+        handleInputOwner(e.key, cardOwner);
         inputName = "Card Holder";
         //return cardOwner;  
         }        
@@ -128,7 +129,7 @@ inputCVC.addEventListener("keydown", (e) => {
     return cvcNumber;
 });
 
-function handleInputOwner(key, arr, output) {
+function handleInputOwner(key, arr) {
 
     if(key === 'Backspace' && arr.length > 0) {
         arr.pop();
@@ -143,9 +144,9 @@ function handleInputOwner(key, arr, output) {
         return;
     }
 
-    /*if(inputName === "Card Holder") {
-        inputCardHolder.value = arr.join("");
-    }*/
+    if(inputName === "Card Holder") {
+        inputCardHolder.textContent = arr.join("");
+    }
     return arr;
 }
 

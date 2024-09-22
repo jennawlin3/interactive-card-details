@@ -141,7 +141,7 @@ input::placeholder {
     width: 90%;
     display: flex;
     gap: 5px;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .date {
